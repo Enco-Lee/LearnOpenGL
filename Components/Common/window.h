@@ -6,40 +6,43 @@
 
 namespace Hub
 {
-	namespace Status
-	{
-		enum class status_t
-		{
-			FAILED = 0,
-			SUCCESS = 1
-		};
-	}
+    namespace Status
+    {
+        enum class status_t
+        {
+            FAILED  = 0,
+            SUCCESS = 1
+        };
+    }
 
-	class Window
-	{
-		using WindowHandle = GLFWwindow*;
-	public:
-		Window(int width = 800, int height = 600, std::string name = "Window");
-		~Window();
-		Status::status_t init();
-		WindowHandle getNativeHandle() const;
+    class Window
+    {
+        using WindowHandle = GLFWwindow*;
 
-		void swapBuffer();
-		void pollEvents();
+    public:
+        Window(int width = 800, int height = 600, std::string name = "Window");
+        ~Window();
 
-		bool shouldClose() const;
-		void setShouldClose(bool val);
-		int getKey(int key);
+        Status::status_t init();
+        WindowHandle     getNativeHandle() const;
 
-		void setFramebufferSizeCallback(GLFWframebuffersizefun callBack);
-		void setKeyCallback(GLFWkeyfun callBack);
+        void swapBuffer();
+        void pollEvents();
 
-	private:
-		int _width;
-		int _height;
-		std::string _name;
-		GLFWwindow* _window = nullptr;
+        bool shouldClose() const;
+        void setShouldClose(bool val);
+        int  getKey(int key);
 
-		void destroy();
-	};
-}
+        void setFramebufferSizeCallback(GLFWframebuffersizefun callBack);
+        void setKeyCallback(GLFWkeyfun callBack);
+
+    private:
+        int _width;
+        int _height;
+
+        std::string _name;
+        GLFWwindow* _window = nullptr;
+
+        void destroy();
+    };
+} // namespace Hub
