@@ -9,6 +9,14 @@
 #include <utility>
 #include <algorithm>
 
+#if __cplusplus < 202002L // check version lower than C++20 
+namespace std
+{
+    template<typename T>
+    using remove_cvref_t = typename std::remove_cv<typename std::remove_reference<T>::type>::type;
+} // namespace std
+#endif
+
 // ===================== Configuration (Adjustable) =====================
 #define IMGUI_EDIT_LABEL_WIDTH 150.0f           // Fixed label width (same line with controls)
 #define IMGUI_EDIT_LABEL_MARGIN 5.0f            // Safe margin between label and controls (prevents overlap)

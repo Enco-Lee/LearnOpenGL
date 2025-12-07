@@ -42,4 +42,6 @@ target_link_libraries(${PROJECT_NAME} PUBLIC
 	imgui
 	ImGuiFileDialog
 	tinyxml2::tinyxml2
+    rttr_core_lib
+    pugixml-static
 )

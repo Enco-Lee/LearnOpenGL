@@ -8,6 +8,7 @@
 #include <string>
 
 #include "ui/data_editor.h"
+#include "data/object_data.h"
 
 void SetupImGuiStyle()
 {
@@ -70,6 +71,16 @@ namespace Hub
 
             SetupImGuiStyle();
             _dataEditorUI = DataEditorUI();
+
+            if (auto class_type = rttr::type::get_by_name("LineData"))
+            {
+                class_type.set_property_value("id", _lineData, 101);
+
+                auto obj = class_type.create();
+                class_type.set_property_value("id", obj, 102);
+                class_type.set_property_value("color", obj, 255);
+                // TODO
+            }
         }
 
         void update() {}
@@ -108,6 +119,7 @@ namespace Hub
 
     private:
         DataEditorUI _dataEditorUI;
+        LineData     _lineData;
     };
 } // namespace Hub
 
