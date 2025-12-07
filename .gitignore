@@ -358,3 +358,4 @@ build/
 .idea
 Demos/**/imgui.ini
 *_log.txt
+Libraries/**/*.zip
