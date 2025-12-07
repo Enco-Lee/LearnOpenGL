@@ -8,7 +8,13 @@ namespace Hub
 	{
 	public:
 		Application() = default;
-		virtual ~Application() { glfwTerminate(); }
+
+        virtual ~Application()
+        {
+            destory();
+            
+			glfwTerminate();
+        }
 		void init();
 
 		virtual void initData() {};
@@ -17,8 +23,12 @@ namespace Hub
 		virtual void render(); // render tick
 		void run(); // main tick
 
+		virtual void destory() {};
+
+    protected:
+        std::unique_ptr<Window> _currentWindow;
+
 	private:
-		std::unique_ptr<Window> currentWindow = nullptr;
 
 		void createContext(); // include init window
 

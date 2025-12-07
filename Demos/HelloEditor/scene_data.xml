@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scene>
+    <app_config id="config_1">
+        <app_name>MyApp</app_name>
+        <window_width>1920</window_width>
+        <window_height>1080</window_height>
+        <fullscreen>true</fullscreen>
+        <volume>0.94999999</volume>
+    </app_config>
+    <app_config id="config_2">
+        <app_name>MyApp</app_name>
+        <window_width>1366</window_width>
+        <window_height>768</window_height>
+        <fullscreen>false</fullscreen>
+        <volume>0.72000003</volume>
+    </app_config>
+    <app_config id="config_3">
+        <app_name>MyApp</app_name>
+        <window_width>2560</window_width>
+        <window_height>1440</window_height>
+        <fullscreen>true</fullscreen>
+        <volume>0.88</volume>
+    </app_config>
+    <app_config id="config_4">
+        <app_name>MyApp</app_name>
+        <window_width>1024</window_width>
+        <window_height>768</window_height>
+        <fullscreen>false</fullscreen>
+        <volume>0.64999998</volume>
+    </app_config>
+    <app_config id="config_5">
+        <app_name>MyApp</app_name>
+        <window_width>1709</window_width>
+        <window_height>900</window_height>
+        <fullscreen>true</fullscreen>
+        <volume>0.92000002</volume>
+    </app_config>
+    <app_config id="config_6">
+        <app_name>MyApp</app_name>
+        <window_width>1280</window_width>
+        <window_height>720</window_height>
+        <fullscreen>false</fullscreen>
+        <volume>0.77999997</volume>
+    </app_config>
+    <app_config id="config_7">
+        <app_name>MyApp</app_name>
+        <window_width>2048</window_width>
+        <window_height>1152</window_height>
+        <fullscreen>true</fullscreen>
+        <volume>0.82999998</volume>
+    </app_config>
+    <app_config id="config_8">
+        <app_name>MyApp</app_name>
+        <window_width>800</window_width>
+        <window_height>600</window_height>
+        <fullscreen>false</fullscreen>
+        <volume>0.58999997</volume>
+    </app_config>
+    <app_config id="config_9">
+        <app_name>MyApp</app_name>
+        <window_width>1720</window_width>
+        <window_height>1080</window_height>
+        <fullscreen>true</fullscreen>
+        <volume>0.97000003</volume>
+    </app_config>
+    <app_config id="config_10">
+        <app_name>MyApp</app_name>
+        <window_width>960</window_width>
+        <window_height>540</window_height>
+        <fullscreen>false</fullscreen>
+        <volume>0.68000001</volume>
+    </app_config>
+    <app_config id="-1">
+        <app_name>MyApp</app_name>
+        <window_width>1280</window_width>
+        <window_height>880</window_height>
+        <fullscreen>false</fullscreen>
+        <volume>0.80000001</volume>
+    </app_config>
+    <player_data id="player_1">
+        <name>Aragorn</name>
+        <level>4</level>
+        <health>98.5</health>
+        <position x="123.4" y="56.700001" z="-89"/>
+    </player_data>
+    <player_data id="player_2">
+        <name>Legolas</name>
+        <level>52</level>
+        <health>89.199997</health>
+        <position x="-45.599998" y="78.900002" z="101.1"/>
+    </player_data>
+    <player_data id="player_3">
+        <name>Gimli</name>
+        <level>38</level>
+        <health>100</health>
+        <position x="76.5" y="-23.4" z="56.700001"/>
+    </player_data>
+    <player_data id="player_4">
+        <name>Arwen</name>
+        <level>41</level>
+        <health>76.800003</health>
+        <position x="-98.699997" y="45.299999" z="-21.9"/>
+    </player_data>
+    <player_data id="player_5">
+        <name>Gandalf</name>
+        <level>60</level>
+        <health>92.300003</health>
+        <position x="34.200001" y="89.099998" z="76.5"/>
+    </player_data>
+    <player_data id="player_6">
+        <name>Frodo</name>
+        <level>29</level>
+        <health>67.400002</health>
+        <position x="-12.3" y="-45.599998" z="89"/>
+    </player_data>
+    <player_data id="player_7">
+        <name>Samwise</name>
+        <level>33</level>
+        <health>82.099998</health>
+        <position x="56.700001" y="23.4" z="-45.599998"/>
+    </player_data>
+    <player_data id="player_8">
+        <name>Merry</name>
+        <level>31</level>
+        <health>79.5</health>
+        <position x="89" y="-76.5" z="43.200001"/>
+    </player_data>
+    <player_data id="player_9">
+        <name>Pippin</name>
+        <level>28</level>
+        <health>73.900002</health>
+        <position x="-34.5" y="67.800003" z="-90.099998"/>
+    </player_data>
+    <player_data id="player_10">
+        <name>Boromir</name>
+        <level>37</level>
+        <health>85.599998</health>
+        <position x="21.299999" y="-54.700001" z="89.900002"/>
+    </player_data>
+    <player_data id="-1">
+        <name>Player1</name>
+        <level>1</level>
+        <health>100</health>
+        <position x="0" y="14.5" z="0"/>
+    </player_data>
+</scene>

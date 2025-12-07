@@ -36,6 +36,12 @@ namespace Hub
         void setFramebufferSizeCallback(GLFWframebuffersizefun callBack);
         void setKeyCallback(GLFWkeyfun callBack);
 
+        int getWidth() const;
+        int getHeight() const;
+
+        int getFrameBufferWidth() const;
+        int getFrameBufferHeight() const;
+
     private:
         int _width;
         int _height;

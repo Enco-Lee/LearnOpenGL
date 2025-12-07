@@ -25,22 +25,22 @@ namespace Hub
 	void Application::run()
 	{
 		init();
-		while (!currentWindow->shouldClose())
+        while (!_currentWindow->shouldClose())
 		{
 			update();
 			render();
 
 			// double buffer
-			currentWindow->swapBuffer();
+            _currentWindow->swapBuffer();
 			// events
-			currentWindow->pollEvents();
+            _currentWindow->pollEvents();
 		}
 	}
 
 	void Application::createContext()
 	{
 		// 
-		currentWindow = std::make_unique<Window>();
+		_currentWindow = std::make_unique<Window>();
 	}
 
 }

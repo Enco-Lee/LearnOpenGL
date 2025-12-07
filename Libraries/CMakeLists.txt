@@ -21,4 +21,9 @@ target_include_directories(ImGuiFileDialog PRIVATE
     $<TARGET_PROPERTY:imgui,INTERFACE_INCLUDE_DIRECTORIES>
     $<TARGET_PROPERTY:imgui,INCLUDE_DIRECTORIES>
 )
+set(tinyxml2_INSTALL_PKGCONFIG OFF CACHE BOOL "Disable pkg-config file generation")
+add_subdirectory("tinyxml2-11.0.0")
+
 set_target_properties(ImGuiFileDialog PROPERTIES FOLDER ${THIRD_PARTY_FOLDER})
+set_target_properties(tinyxml2 PROPERTIES FOLDER ${THIRD_PARTY_FOLDER})
+set_target_properties(xmltest PROPERTIES FOLDER ${OTHER_FOLDER})
