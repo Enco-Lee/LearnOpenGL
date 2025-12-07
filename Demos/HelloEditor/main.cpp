@@ -29,7 +29,6 @@ void SetupImGuiStyle()
     colors[ImGuiCol_TabHovered]     = ImVec4(0.25f, 0.25f, 0.25f, 0.80f);
     colors[ImGuiCol_TabActive]      = ImVec4(0.22f, 0.45f, 0.70f, 1.00f);
 
-
     style.WindowPadding     = ImVec2(12.0f, 10.0f);
     style.FramePadding      = ImVec2(8.0f, 6.0f);
     style.CellPadding       = ImVec2(6.0f, 4.0f);
@@ -43,22 +42,20 @@ void SetupImGuiStyle()
     style.FrameBorderSize   = 1.0f;
     style.WindowBorderSize  = 1.0f;
     style.ScrollbarSize     = 12.0f;
-   
+
     ImGuiIO& io = ImGui::GetIO();
 
     io.Fonts->AddFontDefault();
-    io.Fonts->Fonts[0]->Scale = 1.05f; 
+    io.Fonts->Fonts[0]->Scale = 1.05f;
 }
-
-
 
 namespace Hub
 {
-	class HelloApp :public Application
-	{
-	public:
-		void initData()
-		{
+    class HelloApp : public Application
+    {
+    public:
+        void initData()
+        {
             IMGUI_CHECKVERSION();
             ImGui::CreateContext();
             ImGuiIO& io = ImGui::GetIO();
@@ -73,14 +70,12 @@ namespace Hub
 
             SetupImGuiStyle();
             _dataEditorUI = DataEditorUI();
-		}
+        }
 
-		void update()
-		{
-		}
+        void update() {}
 
-		void render()
-		{
+        void render()
+        {
             if (glfwGetWindowAttrib(_currentWindow->getNativeHandle(), GLFW_ICONIFIED) != 0)
             {
                 ImGui_ImplGlfw_Sleep(10);
@@ -91,16 +86,15 @@ namespace Hub
             ImGui_ImplOpenGL3_NewFrame();
             ImGui_ImplGlfw_NewFrame();
             ImGui::NewFrame();
-            
+
             // pass
             _dataEditorUI.render();
 
             ImGui::Render();
-			glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
-			glClear(GL_COLOR_BUFFER_BIT);
+            glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
+            glClear(GL_COLOR_BUFFER_BIT);
 
-           
-			// Draw
+            // Draw
             ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
         }
 
@@ -114,13 +108,13 @@ namespace Hub
 
     private:
         DataEditorUI _dataEditorUI;
-	};
-}
+    };
+} // namespace Hub
 
 int main()
 {
-	using namespace Hub;
-	HelloApp app;
-	app.run();
-	return 0;
+    using namespace Hub;
+    HelloApp app;
+    app.run();
+    return 0;
 }

@@ -10,41 +10,42 @@
 
 namespace Hub
 {
-	namespace MeshData
-	{
-		struct Vertex
-		{
-			Vector3 position;
-			Vector3 normal;
-			Vector2 texCoords;
-		};
+    namespace MeshData
+    {
+        struct Vertex
+        {
+            Vector3 position;
+            Vector3 normal;
+            Vector2 texCoords;
+        };
 
-		struct Texture
-		{
-			/*unsigned int id;*/
-			SPTexture ptr;
-			std::string type;
-			std::string path;
-		};
-	}
+        struct Texture
+        {
+            /*unsigned int id;*/
+            SPTexture   ptr;
+            std::string type;
+            std::string path;
+        };
+    } // namespace MeshData
 
-	class Mesh
-	{
-	public:
-		std::vector<MeshData::Vertex> vertices;
-		std::vector<unsigned int> indices;
-		std::vector<MeshData::Texture> textures;
+    class Mesh
+    {
+    public:
+        std::vector<MeshData::Vertex>  vertices;
+        std::vector<unsigned int>      indices;
+        std::vector<MeshData::Texture> textures;
 
-		Mesh(std::vector<MeshData::Vertex> vertices, std::vector<unsigned int> indices, std::vector<MeshData::Texture> textures);
+        Mesh(std::vector<MeshData::Vertex>  vertices,
+             std::vector<unsigned int>      indices,
+             std::vector<MeshData::Texture> textures);
 
-		void draw(Shader& shader);
+        void draw(Shader& shader);
 
-	private:
-		SPVertexArray VAO;
-		SPVertexBuffer VBO;
-		SPElementBuffer EBO;
+    private:
+        SPVertexArray   VAO;
+        SPVertexBuffer  VBO;
+        SPElementBuffer EBO;
 
-		void setupMesh();
-		
-	};
-}
+        void setupMesh();
+    };
+} // namespace Hub

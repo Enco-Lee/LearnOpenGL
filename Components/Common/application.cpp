@@ -2,47 +2,45 @@
 
 namespace Hub
 {
-	void Application::init()
-	{
-		// init opengl
-		createContext();
-		// init data
-		initData();
-	}
+    void Application::init()
+    {
+        // init opengl
+        createContext();
+        // init data
+        initData();
+    }
 
-	void Application::update()
-	{
-		// object update
-		
-		// input update
-	}
+    void Application::update()
+    {
+        // object update
 
-	void Application::render()
-	{
-		// mesh render
-	}
+        // input update
+    }
 
-	void Application::run()
-	{
-		init();
+    void Application::render()
+    {
+        // mesh render
+    }
+
+    void Application::run()
+    {
+        init();
         while (!_currentWindow->shouldClose())
-		{
-			update();
-			render();
+        {
+            update();
+            render();
 
-			// double buffer
+            // double buffer
             _currentWindow->swapBuffer();
-			// events
+            // events
             _currentWindow->pollEvents();
-		}
-	}
+        }
+    }
 
-	void Application::createContext()
-	{
-		// 
-		_currentWindow = std::make_unique<Window>();
-	}
+    void Application::createContext()
+    {
+        //
+        _currentWindow = std::make_unique<Window>();
+    }
 
-}
-
-
+} // namespace Hub

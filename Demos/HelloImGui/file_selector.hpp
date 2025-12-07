@@ -17,7 +17,7 @@ void ShowFileSelectDemo()
     if (ImGui::Button("Select File"))
     {
         IGFD::FileDialogConfig config;
-        config.path = "."; 
+        config.path = ".";
         ImGuiFileDialog::Instance()->OpenDialog("ChooseFileDlg", "Choose a File", ".*", config);
     }
 

@@ -3,18 +3,18 @@
 
 namespace Hub
 {
-	class FrameBuffer;
-	using SPFrameBuffer = std::shared_ptr<FrameBuffer>;
+    class FrameBuffer;
+    using SPFrameBuffer = std::shared_ptr<FrameBuffer>;
 
-	class FrameBuffer
-	{
-	public:
-		static SPFrameBuffer create();
-		~FrameBuffer();
-		operator GLuint() const;
+    class FrameBuffer
+    {
+    public:
+        static SPFrameBuffer create();
+        ~FrameBuffer();
+        operator GLuint() const;
 
-	private:
-		FrameBuffer();
-		GLuint _obj;
-	};
-}
+    private:
+        FrameBuffer();
+        GLuint _obj;
+    };
+} // namespace Hub

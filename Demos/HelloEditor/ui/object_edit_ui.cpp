@@ -1,6 +1,5 @@
 #include "object_edit_ui.hpp"
 
-
 void ImGuiEdit(AppConfig& config)
 {
     IMGUI_EDIT_MEMBER(config, app_name);

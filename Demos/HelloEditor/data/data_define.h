@@ -31,7 +31,6 @@ struct LevelConfig
     static constexpr const char* Fmt   = "%d";
 };
 
-
 // Example: Level enum config
 struct LevelEnumConfig
 {
@@ -43,7 +42,7 @@ struct LevelEnumConfig
     }
 
     static constexpr bool ShowHint       = true;
-    static constexpr bool EnableDropdown = false; 
+    static constexpr bool EnableDropdown = false;
 };
 
 // Example: Job enum config

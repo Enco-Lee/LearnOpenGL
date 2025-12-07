@@ -4,33 +4,32 @@
 
 namespace Hub
 {
-	class Application
-	{
-	public:
-		Application() = default;
+    class Application
+    {
+    public:
+        Application() = default;
 
         virtual ~Application()
         {
             destory();
-            
-			glfwTerminate();
+
+            glfwTerminate();
         }
-		void init();
 
-		virtual void initData() {};
+        void init();
 
-		virtual void update(); // logic tick
-		virtual void render(); // render tick
-		void run(); // main tick
+        virtual void initData() {};
 
-		virtual void destory() {};
+        virtual void update(); // logic tick
+        virtual void render(); // render tick
+        void         run();    // main tick
+
+        virtual void destory() {};
 
     protected:
         std::unique_ptr<Window> _currentWindow;
 
-	private:
-
-		void createContext(); // include init window
-
-	};
-}
+    private:
+        void createContext(); // include init window
+    };
+} // namespace Hub

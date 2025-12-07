@@ -5,7 +5,6 @@ option(GROUP_BY_EXPLORER ON)
 #LIST(APPEND ComponentAllSubDir "Math")
 #LIST(APPEND ComponentAllSubDir "Shader")
 LIST(APPEND ComponentAllSubDir "Common")
-#LIST(APPEND ComponentAllSubDir "Window")
 
 
 set(PROJECT_COMPONENTS_DIR ${CMAKE_CURRENT_SOURCE_DIR})

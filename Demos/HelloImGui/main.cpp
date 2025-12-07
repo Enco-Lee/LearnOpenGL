@@ -172,7 +172,7 @@ int main(int, char**)
         // 2. Show a simple window that we create ourselves. We use a Begin/End pair to create a named window.
         {
             ShowFileSelectDemo();
-            //ShowSimpleFileSelector();
+            // ShowSimpleFileSelector();
 
             static float f       = 0.0f;
             static int   counter = 0;
