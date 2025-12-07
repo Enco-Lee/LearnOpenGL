@@ -356,3 +356,5 @@ build/
 
 # idea
 .idea
+Demos/**/imgui.ini
+*_log.txt
