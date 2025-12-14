@@ -10,6 +10,8 @@
 #include "ui/data_editor.h"
 #include "data/object_data.h"
 
+#include <zmq.hpp>
+
 void SetupImGuiStyle()
 {
     ImGuiStyle& style  = ImGui::GetStyle();
@@ -57,6 +59,8 @@ namespace Hub
     public:
         void initData()
         {
+            std::shared_ptr<zmq::context_t> zmqContext = std::make_shared<zmq::context_t>(1);
+
             IMGUI_CHECKVERSION();
             ImGui::CreateContext();
             ImGuiIO& io = ImGui::GetIO();
@@ -71,16 +75,21 @@ namespace Hub
 
             SetupImGuiStyle();
             _dataEditorUI = DataEditorUI();
+            _dataEditorUI.init(zmqContext);
 
-            if (auto class_type = rttr::type::get_by_name("LineData"))
-            {
-                class_type.set_property_value("id", _lineData, 101);
+            //if (auto class_type = rttr::type::get_by_name("LineData"))
+            //{
+            //    class_type.set_property_value("id", _lineData, 101);
 
-                auto obj = class_type.create();
-                class_type.set_property_value("id", obj, 102);
-                class_type.set_property_value("color", obj, 255);
-                // TODO
-            }
+            //    auto obj = class_type.create();
+            //    class_type.set_property_value("id", obj, 102);
+            //    class_type.set_property_value("color", obj, 255);
+            //    auto typeName  = obj.get_type().get_name();
+            //    auto line     = obj.get_value<LineData>();
+            //    int  id       = line.id;
+            //    auto x  = 1;
+            //    // TODO
+            //}
         }
 
         void update() {}

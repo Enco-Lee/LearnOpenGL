@@ -22,6 +22,12 @@ void FileSelect(std::string& selectedFile)
     }
 }
 
+void DataEditorUI::init(std::shared_ptr<zmq::context_t> zmqContext)
+{
+    _publisher = zmq::socket_t(*zmqContext, zmq::socket_type::pub);
+    _publisher.bind("ipc:///tmp/zmq_ipc_demo");
+}
+
 void DataEditorUI::render()
 {
     std::string windowName = "Data Editor";
@@ -43,6 +49,9 @@ void DataEditorUI::render()
         bool ok          = loadData(_selectedFile);
         _statesMessage   = ok ? "Data loaded successfully." : "Failed to load data.";
         _lastMessageTime = std::chrono::steady_clock::now();
+        _publisher.send(zmq::message_t("A"), zmq::send_flags::sndmore);
+        _publisher.send(zmq::message_t(_selectedFile), zmq::send_flags::sndmore);
+        _publisher.send(zmq::message_t(_statesMessage));
     }
     ImGui::SameLine();
     // Save data button
@@ -51,6 +60,9 @@ void DataEditorUI::render()
         bool ok          = saveData(_selectedFile);
         _statesMessage   = ok ? "Data saved successfully." : "Failed to save data.";
         _lastMessageTime = std::chrono::steady_clock::now();
+        _publisher.send(zmq::message_t("B"), zmq::send_flags::sndmore);
+        _publisher.send(zmq::message_t(_selectedFile), zmq::send_flags::sndmore);
+        _publisher.send(zmq::message_t(_statesMessage));
     }
     if (!_selectedFile.empty() || !_statesMessage.empty())
     {

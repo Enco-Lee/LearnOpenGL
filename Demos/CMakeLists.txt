@@ -8,6 +8,7 @@ option(GROUP_BY_EXPLORER ON)
 LIST(APPEND ComponentAllSubDir "Hello")
 LIST(APPEND ComponentAllSubDir "HelloImGui")
 LIST(APPEND ComponentAllSubDir "HelloEditor")
+LIST(APPEND ComponentAllSubDir "HelloZmq")
 
 
 set(PROJECT_COMPONENTS_DIR ${CMAKE_CURRENT_SOURCE_DIR})
