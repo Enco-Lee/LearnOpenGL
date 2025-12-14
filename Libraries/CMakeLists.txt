@@ -42,6 +42,8 @@ set(ZMQ_ENABLE_DRAFT OFF CACHE BOOL "Disable draft API" FORCE)
 set(ZMQ_BUILD_CLANG_FORMAT_TARGETS OFF CACHE BOOL "Disable clang-format targets" FORCE)
 
 add_subdirectory("zeromq-4.3.5")
+set(CPPZMQ_BUILD_TESTS OFF CACHE BOOL "Disable cppzmq test " FORCE)
+add_subdirectory("cppzmq-4.11.0")
 
 set(BUILD_RTTR_DYNAMIC OFF CACHE BOOL "Build the dynamic/shared version of RTTR library" FORCE)
 set(BUILD_UNIT_TESTS OFF CACHE BOOL "Build the unit tests of RTTR")
