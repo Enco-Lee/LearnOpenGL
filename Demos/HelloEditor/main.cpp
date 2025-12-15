@@ -59,7 +59,7 @@ namespace Hub
     public:
         void initData()
         {
-            std::shared_ptr<zmq::context_t> zmqContext = std::make_shared<zmq::context_t>(1);
+            _zmqContext = std::make_shared<zmq::context_t>(1);
 
             IMGUI_CHECKVERSION();
             ImGui::CreateContext();
@@ -74,8 +74,8 @@ namespace Hub
             ImGui_ImplOpenGL3_Init(glsl_version);
 
             SetupImGuiStyle();
-            _dataEditorUI = DataEditorUI();
-            _dataEditorUI.init(zmqContext);
+           _dataEditorUI = DataEditorUI();
+           _dataEditorUI.init(_zmqContext);
 
             //if (auto class_type = rttr::type::get_by_name("LineData"))
             //{
@@ -129,6 +129,8 @@ namespace Hub
     private:
         DataEditorUI _dataEditorUI;
         LineData     _lineData;
+
+        std::shared_ptr<zmq::context_t> _zmqContext;
     };
 } // namespace Hub
 

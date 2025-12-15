@@ -5,9 +5,10 @@
 
 int main()
 {
-    zmq::context_t ctx(1);                          
-    zmq::socket_t  subscriber(ctx, zmq::socket_type::sub);
-    subscriber.connect("ipc:///tmp/zmq_ipc_demo");
+    zmq::context_t context(1);                          
+    zmq::socket_t     subscriber(context, zmq::socket_type::sub);
+    const std::string address = "tcp://127.0.0.1:5555";
+    subscriber.connect(address);
     subscriber.set(zmq::sockopt::subscribe, "A");
     subscriber.set(zmq::sockopt::subscribe, "B");
 
