@@ -1,8 +1,8 @@
 cmake_minimum_required(VERSION 3.2)	
 project("HelloEditor")
 
-# 开启多线程编译 和 使用 c++latest 版本
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /MP /std:c++latest")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /MP")
+set(CMAKE_CXX_STANDARD 17)
 
 option(USE_SOLUTION_FOLDERS "使用资源管理器文件夹" ON)
 option(GROUP_BY_EXPLORER ON) 							# 开启分组
