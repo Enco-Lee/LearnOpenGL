@@ -77,19 +77,19 @@ namespace Hub
            _dataEditorUI = DataEditorUI();
            _dataEditorUI.init(_zmqContext);
 
-            //if (auto class_type = rttr::type::get_by_name("LineData"))
-            //{
-            //    class_type.set_property_value("id", _lineData, 101);
+            if (auto class_type = rttr::type::get_by_name("LineData"))
+            {
+                class_type.set_property_value("id", _lineData, 101);
 
-            //    auto obj = class_type.create();
-            //    class_type.set_property_value("id", obj, 102);
-            //    class_type.set_property_value("color", obj, 255);
-            //    auto typeName  = obj.get_type().get_name();
-            //    auto line     = obj.get_value<LineData>();
-            //    int  id       = line.id;
-            //    auto x  = 1;
-            //    // TODO
-            //}
+                auto obj = class_type.create();
+                class_type.set_property_value("id", obj, 102);
+                class_type.set_property_value("color", obj, 255);
+                auto typeName  = obj.get_type().get_name();
+                auto line     = obj.get_value<LineData>();
+                int  id       = line.id;
+                auto x  = 1;
+                // TODO
+            }
         }
 
         void update() {}

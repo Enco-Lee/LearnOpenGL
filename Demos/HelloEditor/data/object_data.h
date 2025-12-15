@@ -1,8 +1,8 @@
 #pragma once
 #include <vector>
 #include <glm/vec3.hpp>
-//#include <rttr/registration>
-//using namespace rttr;
+#include <rttr/registration>
+using namespace rttr;
 
 class Vector3
 {
@@ -61,3 +61,23 @@ struct ObstacleData
     Vector3 rotation;
     Vector3 position;
 };
+
+namespace rttr
+{
+    template struct wrapper_mapper<std::reference_wrapper<Vector3>>;
+} 
+
+RTTR_REGISTRATION
+{
+    using namespace rttr;
+    registration::class_<Vector3>("Vector3")
+        .property("x", &Vector3::getX, &Vector3::setX)
+        .property("y", &Vector3::getY, &Vector3::setY)
+        .property("z", &Vector3::getZ, &Vector3::setZ);
+
+    registration::class_<LineData>("LineData")
+        .constructor<>()(policy::ctor::as_object) // https://www.rttr.org/doc/master/register_policies_page.html
+        .property("id", &LineData::id)
+        .property("color", &LineData::color)
+        .property("points", &LineData::points);
+}
